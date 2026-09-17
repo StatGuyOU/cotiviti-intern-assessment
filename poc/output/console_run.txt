@@ -1,0 +1,52 @@
+Claims Anomaly Radar
+========================================================================
+synthetic claims generated : 295,114 lines, 240 providers, 24 months  (2.9s)
+
+Top 15 providers by consensus rank
+------------------------------------------------------------------------
+rank provider specialty         det   max z  primary signal   disposition
+   1 P0201    Dermatology        3/3    18.2  volume_ts        REVIEW
+   2 P0186    Dermatology        3/3    17.3  volume_ts        REVIEW
+   3 P0205    Dermatology        3/3    14.4  visits_cv        REVIEW
+   4 P0039    Family Medicine    3/3    13.7  em_shift         REVIEW
+   5 P0054    Family Medicine    3/3    11.0  em_shift         REVIEW
+   6 P0114    Cardiology         2/3    39.7  dup_rate         REVIEW
+   7 P0223    Dermatology        2/3    33.2  dup_rate         REVIEW
+   8 P0191    Dermatology        2/3    32.6  dup_rate         REVIEW
+   9 P0238    Dermatology        2/3    16.0  mod25_rate       REVIEW
+  10 P0008    Family Medicine    2/3    15.6  mod25_rate       REVIEW
+  11 P0209    Dermatology        2/3    14.8  mod25_rate       REVIEW
+  12 P0225    Dermatology        2/3    10.9  em5_share        REVIEW
+  13 P0042    Family Medicine    2/3     7.4  em5_share        REVIEW
+  14 P0128    Orthopedics        1/3     8.1  em_shift         REVIEW
+  15 P0036    Family Medicine    1/3     3.8  visits_cv        WITHHOLD
+
+critic dispositions      : 14 REVIEW, 4 WITHHOLD (of 18 providers flagged by at least one detector)
+
+Scorecard against injected ground truth (used for scoring only)
+------------------------------------------------------------------------
+true anomalous providers : 15 of 240   (fixed seed; a wiring check on designed anomalies, not production accuracy - see --seeds)
+precision@15             : 0.93   recall@15: 0.93
+flagged by 2+ detectors  : 13 providers, precision 1.00, recall 0.87
+recall by archetype      : upcoding 0.67, upcoding_drift 1.00, volume_spike 1.00, mod25_overuse 1.00, duplicate_billing 1.00
+
+Example auditor brief (rank 1, P0201)
+------------------------------------------------------------------------
+Provider P0201 (Dermatology) is flagged by 3 of 3 detectors.
+Primary pattern: monthly visits reached 223 in 2025-06 vs a trailing 6-month median of 70 (z = 18.2); anomalous months: 2025-06, 2025-07, 2025-08.
+Supporting evidence: month-to-month volume variability is 0.637 vs a specialty median of 0.135 (modified z = 16.5).
+The multivariate Isolation Forest also isolates this provider's profile.
+Governing policy: CMS Program Integrity Manual, Ch. 4 (benefit integrity: services not rendered).
+Disposition: REVIEW (all critic checks passed). Evidence to request: scheduling capacity and staffing for the flagged months.
+Suggested next step: Verify billed volume in the flagged months against scheduling capacity and beneficiary contact; screen for services not rendered.
+This is a screening signal, not a determination; a human reviewer decides.
+
+Example withheld packet (rank 15, P0036)
+------------------------------------------------------------------------
+Provider P0036 (Family Medicine) is flagged by 1 of 3 detectors.
+Primary pattern: month-to-month volume variability is 0.231 vs a specialty median of 0.142 (modified z = 3.8).
+Governing policy: CMS Program Integrity Manual, Ch. 4 (benefit integrity: services not rendered).
+Disposition: WITHHOLD (failed check: corroborated: 2+ detectors agree or one signal with z >= 8). No case is opened; re-evaluate with next month's data or after analyst review.
+This is a screening signal, not a determination; a human reviewer decides.
+
+outputs written to /mnt/c/Users/wangp/Desktop/Cotiviti_Assessment/poc/output/  (claims_synthetic.csv, provider_features.csv, flags.csv, evidence.json, auditor_briefs.md, scorecard.json, dashboard.png)

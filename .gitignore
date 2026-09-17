@@ -1,0 +1,18 @@
+# large regenerated data (python poc/claims_radar.py recreates it in ~6 s)
+poc/output/claims_synthetic.csv
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+# office lock files and OS noise
+~$*.docx
+~$*.pptx
+.DS_Store
+Thumbs.db
+# build scripts are kept; intermediate renders are not
+report/*.pdf
+slides/*.pdf
+slides/*.jpg
+# private notes, not for the public repo
+NOTES_private_*.md

@@ -1,0 +1,1123 @@
+[
+  {
+    "provider_id": "P0201",
+    "specialty": "Dermatology",
+    "rank": 1,
+    "n_detectors": 3,
+    "n_claims": 2154,
+    "evidence": [
+      {
+        "detector": "timeseries",
+        "signal": "volume_ts",
+        "z": 18.2,
+        "value": 223.0,
+        "peer_median": 70.5,
+        "text": "monthly visits reached 223 in 2025-06 vs a trailing 6-month median of 70 (z = 18.2); anomalous months: 2025-06, 2025-07, 2025-08"
+      },
+      {
+        "detector": "peer",
+        "signal": "visits_cv",
+        "z": 16.5,
+        "value": 0.637,
+        "peer_median": 0.135,
+        "text": "month-to-month volume variability is 0.637 vs a specialty median of 0.135 (modified z = 16.5)"
+      },
+      {
+        "detector": "isoforest",
+        "signal": "multivariate",
+        "z": 0.534,
+        "value": null,
+        "peer_median": null,
+        "text": "multivariate billing profile is isolated from peers (Isolation Forest score 0.534, ranked 9 of 240)"
+      }
+    ],
+    "policy_source": [
+      "CMS Program Integrity Manual, Ch. 4 (benefit integrity: services not rendered)"
+    ],
+    "required_evidence": [
+      "scheduling capacity and staffing for the flagged months"
+    ],
+    "critic_checks": [
+      {
+        "check": "explainable signal present (not multivariate-only)",
+        "passed": true
+      },
+      {
+        "check": "peer or trailing baseline attached to every signal",
+        "passed": true
+      },
+      {
+        "check": "claim volume >= 200 lines",
+        "passed": true
+      },
+      {
+        "check": "corroborated: 2+ detectors agree or one signal with z >= 8",
+        "passed": true
+      },
+      {
+        "check": "governing policy identified for every signal",
+        "passed": true
+      }
+    ],
+    "disposition": "REVIEW",
+    "disposition_reason": "all critic checks passed",
+    "brief_source": "template",
+    "brief": "Provider P0201 (Dermatology) is flagged by 3 of 3 detectors.\nPrimary pattern: monthly visits reached 223 in 2025-06 vs a trailing 6-month median of 70 (z = 18.2); anomalous months: 2025-06, 2025-07, 2025-08.\nSupporting evidence: month-to-month volume variability is 0.637 vs a specialty median of 0.135 (modified z = 16.5).\nThe multivariate Isolation Forest also isolates this provider's profile.\nGoverning policy: CMS Program Integrity Manual, Ch. 4 (benefit integrity: services not rendered).\nDisposition: REVIEW (all critic checks passed). Evidence to request: scheduling capacity and staffing for the flagged months.\nSuggested next step: Verify billed volume in the flagged months against scheduling capacity and beneficiary contact; screen for services not rendered.\nThis is a screening signal, not a determination; a human reviewer decides."
+  },
+  {
+    "provider_id": "P0186",
+    "specialty": "Dermatology",
+    "rank": 2,
+    "n_detectors": 3,
+    "n_claims": 2229,
+    "evidence": [
+      {
+        "detector": "timeseries",
+        "signal": "volume_ts",
+        "z": 17.3,
+        "value": 225.0,
+        "peer_median": 71.0,
+        "text": "monthly visits reached 225 in 2025-06 vs a trailing 6-month median of 71 (z = 17.3); anomalous months: 2025-06, 2025-07, 2025-08"
+      },
+      {
+        "detector": "peer",
+        "signal": "visits_cv",
+        "z": 14.0,
+        "value": 0.561,
+        "peer_median": 0.135,
+        "text": "month-to-month volume variability is 0.561 vs a specialty median of 0.135 (modified z = 14.0)"
+      },
+      {
+        "detector": "isoforest",
+        "signal": "multivariate",
+        "z": 0.518,
+        "value": null,
+        "peer_median": null,
+        "text": "multivariate billing profile is isolated from peers (Isolation Forest score 0.518, ranked 12 of 240)"
+      }
+    ],
+    "policy_source": [
+      "CMS Program Integrity Manual, Ch. 4 (benefit integrity: services not rendered)"
+    ],
+    "required_evidence": [
+      "scheduling capacity and staffing for the flagged months"
+    ],
+    "critic_checks": [
+      {
+        "check": "explainable signal present (not multivariate-only)",
+        "passed": true
+      },
+      {
+        "check": "peer or trailing baseline attached to every signal",
+        "passed": true
+      },
+      {
+        "check": "claim volume >= 200 lines",
+        "passed": true
+      },
+      {
+        "check": "corroborated: 2+ detectors agree or one signal with z >= 8",
+        "passed": true
+      },
+      {
+        "check": "governing policy identified for every signal",
+        "passed": true
+      }
+    ],
+    "disposition": "REVIEW",
+    "disposition_reason": "all critic checks passed",
+    "brief_source": "template",
+    "brief": "Provider P0186 (Dermatology) is flagged by 3 of 3 detectors.\nPrimary pattern: monthly visits reached 225 in 2025-06 vs a trailing 6-month median of 71 (z = 17.3); anomalous months: 2025-06, 2025-07, 2025-08.\nSupporting evidence: month-to-month volume variability is 0.561 vs a specialty median of 0.135 (modified z = 14.0).\nThe multivariate Isolation Forest also isolates this provider's profile.\nGoverning policy: CMS Program Integrity Manual, Ch. 4 (benefit integrity: services not rendered).\nDisposition: REVIEW (all critic checks passed). Evidence to request: scheduling capacity and staffing for the flagged months.\nSuggested next step: Verify billed volume in the flagged months against scheduling capacity and beneficiary contact; screen for services not rendered.\nThis is a screening signal, not a determination; a human reviewer decides."
+  },
+  {
+    "provider_id": "P0205",
+    "specialty": "Dermatology",
+    "rank": 3,
+    "n_detectors": 3,
+    "n_claims": 1629,
+    "evidence": [
+      {
+        "detector": "peer",
+        "signal": "visits_cv",
+        "z": 14.4,
+        "value": 0.572,
+        "peer_median": 0.135,
+        "text": "month-to-month volume variability is 0.572 vs a specialty median of 0.135 (modified z = 14.4)"
+      },
+      {
+        "detector": "timeseries",
+        "signal": "volume_ts",
+        "z": 14.4,
+        "value": 158.0,
+        "peer_median": 53.0,
+        "text": "monthly visits reached 158 in 2025-06 vs a trailing 6-month median of 53 (z = 14.4); anomalous months: 2025-06, 2025-07, 2025-08"
+      },
+      {
+        "detector": "isoforest",
+        "signal": "multivariate",
+        "z": 0.528,
+        "value": null,
+        "peer_median": null,
+        "text": "multivariate billing profile is isolated from peers (Isolation Forest score 0.528, ranked 11 of 240)"
+      }
+    ],
+    "policy_source": [
+      "CMS Program Integrity Manual, Ch. 4 (benefit integrity: services not rendered)"
+    ],
+    "required_evidence": [
+      "scheduling capacity and staffing for the flagged months"
+    ],
+    "critic_checks": [
+      {
+        "check": "explainable signal present (not multivariate-only)",
+        "passed": true
+      },
+      {
+        "check": "peer or trailing baseline attached to every signal",
+        "passed": true
+      },
+      {
+        "check": "claim volume >= 200 lines",
+        "passed": true
+      },
+      {
+        "check": "corroborated: 2+ detectors agree or one signal with z >= 8",
+        "passed": true
+      },
+      {
+        "check": "governing policy identified for every signal",
+        "passed": true
+      }
+    ],
+    "disposition": "REVIEW",
+    "disposition_reason": "all critic checks passed",
+    "brief_source": "template",
+    "brief": "Provider P0205 (Dermatology) is flagged by 3 of 3 detectors.\nPrimary pattern: month-to-month volume variability is 0.572 vs a specialty median of 0.135 (modified z = 14.4).\nSupporting evidence: monthly visits reached 158 in 2025-06 vs a trailing 6-month median of 53 (z = 14.4); anomalous months: 2025-06, 2025-07, 2025-08.\nThe multivariate Isolation Forest also isolates this provider's profile.\nGoverning policy: CMS Program Integrity Manual, Ch. 4 (benefit integrity: services not rendered).\nDisposition: REVIEW (all critic checks passed). Evidence to request: scheduling capacity and staffing for the flagged months.\nSuggested next step: Verify billed volume in the flagged months against scheduling capacity and beneficiary contact; screen for services not rendered.\nThis is a screening signal, not a determination; a human reviewer decides."
+  },
+  {
+    "provider_id": "P0039",
+    "specialty": "Family Medicine",
+    "rank": 4,
+    "n_detectors": 3,
+    "n_claims": 1866,
+    "evidence": [
+      {
+        "detector": "timeseries",
+        "signal": "em_shift",
+        "z": 13.7,
+        "value": 0.762,
+        "peer_median": 0.452,
+        "text": "share of level 4-5 E/M visits rose from 0.45 to 0.76 starting 2025-01 (two-proportion z = 13.7)"
+      },
+      {
+        "detector": "peer",
+        "signal": "em5_share",
+        "z": 3.5,
+        "value": 0.22,
+        "peer_median": 0.095,
+        "text": "share of level-5 (99215) visits is 0.22 vs a specialty median of 0.0954 (modified z = 3.5)"
+      },
+      {
+        "detector": "isoforest",
+        "signal": "multivariate",
+        "z": 0.514,
+        "value": null,
+        "peer_median": null,
+        "text": "multivariate billing profile is isolated from peers (Isolation Forest score 0.514, ranked 13 of 240)"
+      }
+    ],
+    "policy_source": [
+      "CMS Medicare Claims Processing Manual, Ch. 12, Sec. 30.6 (E/M services); AMA 2021 E/M guidelines"
+    ],
+    "required_evidence": [
+      "documentation for 30 level 4-5 visits dated after the change point",
+      "documentation for a random sample of 30 level-5 visits"
+    ],
+    "critic_checks": [
+      {
+        "check": "explainable signal present (not multivariate-only)",
+        "passed": true
+      },
+      {
+        "check": "peer or trailing baseline attached to every signal",
+        "passed": true
+      },
+      {
+        "check": "claim volume >= 200 lines",
+        "passed": true
+      },
+      {
+        "check": "corroborated: 2+ detectors agree or one signal with z >= 8",
+        "passed": true
+      },
+      {
+        "check": "governing policy identified for every signal",
+        "passed": true
+      }
+    ],
+    "disposition": "REVIEW",
+    "disposition_reason": "all critic checks passed",
+    "brief_source": "template",
+    "brief": "Provider P0039 (Family Medicine) is flagged by 3 of 3 detectors.\nPrimary pattern: share of level 4-5 E/M visits rose from 0.45 to 0.76 starting 2025-01 (two-proportion z = 13.7).\nSupporting evidence: share of level-5 (99215) visits is 0.22 vs a specialty median of 0.0954 (modified z = 3.5).\nThe multivariate Isolation Forest also isolates this provider's profile.\nGoverning policy: CMS Medicare Claims Processing Manual, Ch. 12, Sec. 30.6 (E/M services); AMA 2021 E/M guidelines.\nDisposition: REVIEW (all critic checks passed). Evidence to request: documentation for 30 level 4-5 visits dated after the change point; documentation for a random sample of 30 level-5 visits.\nSuggested next step: Focus the E/M documentation review on visits after the detected change point. Request documentation for a random sample of level 4-5 E/M visits and validate medical decision making / time against the 2021 AMA E/M guidelines.\nThis is a screening signal, not a determination; a human reviewer decides."
+  },
+  {
+    "provider_id": "P0054",
+    "specialty": "Family Medicine",
+    "rank": 5,
+    "n_detectors": 3,
+    "n_claims": 1287,
+    "evidence": [
+      {
+        "detector": "timeseries",
+        "signal": "em_shift",
+        "z": 11.0,
+        "value": 0.798,
+        "peer_median": 0.505,
+        "text": "share of level 4-5 E/M visits rose from 0.50 to 0.80 starting 2025-01 (two-proportion z = 11.0)"
+      },
+      {
+        "detector": "peer",
+        "signal": "em5_share",
+        "z": 6.1,
+        "value": 0.31,
+        "peer_median": 0.095,
+        "text": "share of level-5 (99215) visits is 0.31 vs a specialty median of 0.0954 (modified z = 6.1)"
+      },
+      {
+        "detector": "peer",
+        "signal": "em_mean_level",
+        "z": 4.0,
+        "value": 3.877,
+        "peer_median": 3.466,
+        "text": "mean E/M level is 3.88 vs a specialty median of 3.47 (modified z = 4.0)"
+      },
+      {
+        "detector": "isoforest",
+        "signal": "multivariate",
+        "z": 0.573,
+        "value": null,
+        "peer_median": null,
+        "text": "multivariate billing profile is isolated from peers (Isolation Forest score 0.573, ranked 7 of 240)"
+      }
+    ],
+    "policy_source": [
+      "CMS Medicare Claims Processing Manual, Ch. 12, Sec. 30.6 (E/M services); AMA 2021 E/M guidelines"
+    ],
+    "required_evidence": [
+      "documentation for 30 level 4-5 visits dated after the change point",
+      "documentation for a random sample of 30 level-5 visits",
+      "documentation for a random sample of 30 level 4-5 visits"
+    ],
+    "critic_checks": [
+      {
+        "check": "explainable signal present (not multivariate-only)",
+        "passed": true
+      },
+      {
+        "check": "peer or trailing baseline attached to every signal",
+        "passed": true
+      },
+      {
+        "check": "claim volume >= 200 lines",
+        "passed": true
+      },
+      {
+        "check": "corroborated: 2+ detectors agree or one signal with z >= 8",
+        "passed": true
+      },
+      {
+        "check": "governing policy identified for every signal",
+        "passed": true
+      }
+    ],
+    "disposition": "REVIEW",
+    "disposition_reason": "all critic checks passed",
+    "brief_source": "template",
+    "brief": "Provider P0054 (Family Medicine) is flagged by 3 of 3 detectors.\nPrimary pattern: share of level 4-5 E/M visits rose from 0.50 to 0.80 starting 2025-01 (two-proportion z = 11.0).\nSupporting evidence: share of level-5 (99215) visits is 0.31 vs a specialty median of 0.0954 (modified z = 6.1); mean E/M level is 3.88 vs a specialty median of 3.47 (modified z = 4.0).\nThe multivariate Isolation Forest also isolates this provider's profile.\nGoverning policy: CMS Medicare Claims Processing Manual, Ch. 12, Sec. 30.6 (E/M services); AMA 2021 E/M guidelines.\nDisposition: REVIEW (all critic checks passed). Evidence to request: documentation for 30 level 4-5 visits dated after the change point; documentation for a random sample of 30 level-5 visits; documentation for a random sample of 30 level 4-5 visits.\nSuggested next step: Focus the E/M documentation review on visits after the detected change point. Request documentation for a random sample of level 4-5 E/M visits and validate medical decision making / time against the 2021 AMA E/M guidelines.\nThis is a screening signal, not a determination; a human reviewer decides."
+  },
+  {
+    "provider_id": "P0114",
+    "specialty": "Cardiology",
+    "rank": 6,
+    "n_detectors": 2,
+    "n_claims": 1233,
+    "evidence": [
+      {
+        "detector": "peer",
+        "signal": "dup_rate",
+        "z": 39.7,
+        "value": 0.114,
+        "peer_median": 0.005,
+        "text": "exact-duplicate claim rate is 0.114 vs a specialty median of 0.00506 (modified z = 39.7)"
+      },
+      {
+        "detector": "isoforest",
+        "signal": "multivariate",
+        "z": 0.557,
+        "value": null,
+        "peer_median": null,
+        "text": "multivariate billing profile is isolated from peers (Isolation Forest score 0.557, ranked 8 of 240)"
+      }
+    ],
+    "policy_source": [
+      "Payer duplicate-claim edit policy; CMS Medicare Claims Processing Manual, Ch. 1 (claim adjustments)"
+    ],
+    "required_evidence": [
+      "adjustment and reversal history for the duplicate claim groups"
+    ],
+    "critic_checks": [
+      {
+        "check": "explainable signal present (not multivariate-only)",
+        "passed": true
+      },
+      {
+        "check": "peer or trailing baseline attached to every signal",
+        "passed": true
+      },
+      {
+        "check": "claim volume >= 200 lines",
+        "passed": true
+      },
+      {
+        "check": "corroborated: 2+ detectors agree or one signal with z >= 8",
+        "passed": true
+      },
+      {
+        "check": "governing policy identified for every signal",
+        "passed": true
+      }
+    ],
+    "disposition": "REVIEW",
+    "disposition_reason": "all critic checks passed",
+    "brief_source": "template",
+    "brief": "Provider P0114 (Cardiology) is flagged by 2 of 3 detectors.\nPrimary pattern: exact-duplicate claim rate is 0.114 vs a specialty median of 0.00506 (modified z = 39.7).\nThe multivariate Isolation Forest also isolates this provider's profile.\nGoverning policy: Payer duplicate-claim edit policy; CMS Medicare Claims Processing Manual, Ch. 1 (claim adjustments).\nDisposition: REVIEW (all critic checks passed). Evidence to request: adjustment and reversal history for the duplicate claim groups.\nSuggested next step: Verify adjustment and reversal history and the full claim attributes of the duplicate groups before considering an edit or a recovery.\nThis is a screening signal, not a determination; a human reviewer decides."
+  },
+  {
+    "provider_id": "P0223",
+    "specialty": "Dermatology",
+    "rank": 7,
+    "n_detectors": 2,
+    "n_claims": 1360,
+    "evidence": [
+      {
+        "detector": "peer",
+        "signal": "dup_rate",
+        "z": 33.2,
+        "value": 0.11,
+        "peer_median": 0.005,
+        "text": "exact-duplicate claim rate is 0.11 vs a specialty median of 0.0048 (modified z = 33.2)"
+      },
+      {
+        "detector": "isoforest",
+        "signal": "multivariate",
+        "z": 0.582,
+        "value": null,
+        "peer_median": null,
+        "text": "multivariate billing profile is isolated from peers (Isolation Forest score 0.582, ranked 6 of 240)"
+      }
+    ],
+    "policy_source": [
+      "Payer duplicate-claim edit policy; CMS Medicare Claims Processing Manual, Ch. 1 (claim adjustments)"
+    ],
+    "required_evidence": [
+      "adjustment and reversal history for the duplicate claim groups"
+    ],
+    "critic_checks": [
+      {
+        "check": "explainable signal present (not multivariate-only)",
+        "passed": true
+      },
+      {
+        "check": "peer or trailing baseline attached to every signal",
+        "passed": true
+      },
+      {
+        "check": "claim volume >= 200 lines",
+        "passed": true
+      },
+      {
+        "check": "corroborated: 2+ detectors agree or one signal with z >= 8",
+        "passed": true
+      },
+      {
+        "check": "governing policy identified for every signal",
+        "passed": true
+      }
+    ],
+    "disposition": "REVIEW",
+    "disposition_reason": "all critic checks passed",
+    "brief_source": "template",
+    "brief": "Provider P0223 (Dermatology) is flagged by 2 of 3 detectors.\nPrimary pattern: exact-duplicate claim rate is 0.11 vs a specialty median of 0.0048 (modified z = 33.2).\nThe multivariate Isolation Forest also isolates this provider's profile.\nGoverning policy: Payer duplicate-claim edit policy; CMS Medicare Claims Processing Manual, Ch. 1 (claim adjustments).\nDisposition: REVIEW (all critic checks passed). Evidence to request: adjustment and reversal history for the duplicate claim groups.\nSuggested next step: Verify adjustment and reversal history and the full claim attributes of the duplicate groups before considering an edit or a recovery.\nThis is a screening signal, not a determination; a human reviewer decides."
+  },
+  {
+    "provider_id": "P0191",
+    "specialty": "Dermatology",
+    "rank": 8,
+    "n_detectors": 2,
+    "n_claims": 1264,
+    "evidence": [
+      {
+        "detector": "peer",
+        "signal": "dup_rate",
+        "z": 32.6,
+        "value": 0.108,
+        "peer_median": 0.005,
+        "text": "exact-duplicate claim rate is 0.108 vs a specialty median of 0.0048 (modified z = 32.6)"
+      },
+      {
+        "detector": "isoforest",
+        "signal": "multivariate",
+        "z": 0.533,
+        "value": null,
+        "peer_median": null,
+        "text": "multivariate billing profile is isolated from peers (Isolation Forest score 0.533, ranked 10 of 240)"
+      }
+    ],
+    "policy_source": [
+      "Payer duplicate-claim edit policy; CMS Medicare Claims Processing Manual, Ch. 1 (claim adjustments)"
+    ],
+    "required_evidence": [
+      "adjustment and reversal history for the duplicate claim groups"
+    ],
+    "critic_checks": [
+      {
+        "check": "explainable signal present (not multivariate-only)",
+        "passed": true
+      },
+      {
+        "check": "peer or trailing baseline attached to every signal",
+        "passed": true
+      },
+      {
+        "check": "claim volume >= 200 lines",
+        "passed": true
+      },
+      {
+        "check": "corroborated: 2+ detectors agree or one signal with z >= 8",
+        "passed": true
+      },
+      {
+        "check": "governing policy identified for every signal",
+        "passed": true
+      }
+    ],
+    "disposition": "REVIEW",
+    "disposition_reason": "all critic checks passed",
+    "brief_source": "template",
+    "brief": "Provider P0191 (Dermatology) is flagged by 2 of 3 detectors.\nPrimary pattern: exact-duplicate claim rate is 0.108 vs a specialty median of 0.0048 (modified z = 32.6).\nThe multivariate Isolation Forest also isolates this provider's profile.\nGoverning policy: Payer duplicate-claim edit policy; CMS Medicare Claims Processing Manual, Ch. 1 (claim adjustments).\nDisposition: REVIEW (all critic checks passed). Evidence to request: adjustment and reversal history for the duplicate claim groups.\nSuggested next step: Verify adjustment and reversal history and the full claim attributes of the duplicate groups before considering an edit or a recovery.\nThis is a screening signal, not a determination; a human reviewer decides."
+  },
+  {
+    "provider_id": "P0238",
+    "specialty": "Dermatology",
+    "rank": 9,
+    "n_detectors": 2,
+    "n_claims": 2255,
+    "evidence": [
+      {
+        "detector": "peer",
+        "signal": "mod25_rate",
+        "z": 16.0,
+        "value": 0.661,
+        "peer_median": 0.305,
+        "text": "modifier-25 rate (E/M billed with a same-day procedure) is 0.661 vs a specialty median of 0.305 (modified z = 16.0)"
+      },
+      {
+        "detector": "peer",
+        "signal": "paid_per_visit",
+        "z": 5.4,
+        "value": 148.758,
+        "peer_median": 121.142,
+        "text": "paid amount per visit is 149 vs a specialty median of 121 (modified z = 5.4)"
+      },
+      {
+        "detector": "isoforest",
+        "signal": "multivariate",
+        "z": 0.601,
+        "value": null,
+        "peer_median": null,
+        "text": "multivariate billing profile is isolated from peers (Isolation Forest score 0.601, ranked 4 of 240)"
+      }
+    ],
+    "policy_source": [
+      "CMS NCCI Policy Manual for Medicare Services, Ch. I (modifier 25: significant, separately identifiable E/M service)",
+      "Payer fee schedule and add-on procedure policy"
+    ],
+    "required_evidence": [
+      "procedure and E/M notes for 30 same-day E/M + procedure pairs",
+      "add-on procedure documentation for a sample of 30 visits"
+    ],
+    "critic_checks": [
+      {
+        "check": "explainable signal present (not multivariate-only)",
+        "passed": true
+      },
+      {
+        "check": "peer or trailing baseline attached to every signal",
+        "passed": true
+      },
+      {
+        "check": "claim volume >= 200 lines",
+        "passed": true
+      },
+      {
+        "check": "corroborated: 2+ detectors agree or one signal with z >= 8",
+        "passed": true
+      },
+      {
+        "check": "governing policy identified for every signal",
+        "passed": true
+      }
+    ],
+    "disposition": "REVIEW",
+    "disposition_reason": "all critic checks passed",
+    "brief_source": "template",
+    "brief": "Provider P0238 (Dermatology) is flagged by 2 of 3 detectors.\nPrimary pattern: modifier-25 rate (E/M billed with a same-day procedure) is 0.661 vs a specialty median of 0.305 (modified z = 16.0).\nSupporting evidence: paid amount per visit is 149 vs a specialty median of 121 (modified z = 5.4).\nThe multivariate Isolation Forest also isolates this provider's profile.\nGoverning policy: CMS NCCI Policy Manual for Medicare Services, Ch. I (modifier 25: significant, separately identifiable E/M service); Payer fee schedule and add-on procedure policy.\nDisposition: REVIEW (all critic checks passed). Evidence to request: procedure and E/M notes for 30 same-day E/M + procedure pairs; add-on procedure documentation for a sample of 30 visits.\nSuggested next step: Review same-day E/M + procedure pairs for modifier-25 support (a separately identifiable service must be documented). Compare the paid-code mix with peers and review add-on procedure billing.\nThis is a screening signal, not a determination; a human reviewer decides."
+  },
+  {
+    "provider_id": "P0008",
+    "specialty": "Family Medicine",
+    "rank": 10,
+    "n_detectors": 2,
+    "n_claims": 1577,
+    "evidence": [
+      {
+        "detector": "peer",
+        "signal": "mod25_rate",
+        "z": 15.6,
+        "value": 0.636,
+        "peer_median": 0.076,
+        "text": "modifier-25 rate (E/M billed with a same-day procedure) is 0.636 vs a specialty median of 0.0756 (modified z = 15.6)"
+      },
+      {
+        "detector": "peer",
+        "signal": "paid_per_visit",
+        "z": 7.1,
+        "value": 156.445,
+        "peer_median": 118.253,
+        "text": "paid amount per visit is 156 vs a specialty median of 118 (modified z = 7.1)"
+      },
+      {
+        "detector": "isoforest",
+        "signal": "multivariate",
+        "z": 0.616,
+        "value": null,
+        "peer_median": null,
+        "text": "multivariate billing profile is isolated from peers (Isolation Forest score 0.616, ranked 3 of 240)"
+      }
+    ],
+    "policy_source": [
+      "CMS NCCI Policy Manual for Medicare Services, Ch. I (modifier 25: significant, separately identifiable E/M service)",
+      "Payer fee schedule and add-on procedure policy"
+    ],
+    "required_evidence": [
+      "procedure and E/M notes for 30 same-day E/M + procedure pairs",
+      "add-on procedure documentation for a sample of 30 visits"
+    ],
+    "critic_checks": [
+      {
+        "check": "explainable signal present (not multivariate-only)",
+        "passed": true
+      },
+      {
+        "check": "peer or trailing baseline attached to every signal",
+        "passed": true
+      },
+      {
+        "check": "claim volume >= 200 lines",
+        "passed": true
+      },
+      {
+        "check": "corroborated: 2+ detectors agree or one signal with z >= 8",
+        "passed": true
+      },
+      {
+        "check": "governing policy identified for every signal",
+        "passed": true
+      }
+    ],
+    "disposition": "REVIEW",
+    "disposition_reason": "all critic checks passed",
+    "brief_source": "template",
+    "brief": "Provider P0008 (Family Medicine) is flagged by 2 of 3 detectors.\nPrimary pattern: modifier-25 rate (E/M billed with a same-day procedure) is 0.636 vs a specialty median of 0.0756 (modified z = 15.6).\nSupporting evidence: paid amount per visit is 156 vs a specialty median of 118 (modified z = 7.1).\nThe multivariate Isolation Forest also isolates this provider's profile.\nGoverning policy: CMS NCCI Policy Manual for Medicare Services, Ch. I (modifier 25: significant, separately identifiable E/M service); Payer fee schedule and add-on procedure policy.\nDisposition: REVIEW (all critic checks passed). Evidence to request: procedure and E/M notes for 30 same-day E/M + procedure pairs; add-on procedure documentation for a sample of 30 visits.\nSuggested next step: Review same-day E/M + procedure pairs for modifier-25 support (a separately identifiable service must be documented). Compare the paid-code mix with peers and review add-on procedure billing.\nThis is a screening signal, not a determination; a human reviewer decides."
+  },
+  {
+    "provider_id": "P0209",
+    "specialty": "Dermatology",
+    "rank": 11,
+    "n_detectors": 2,
+    "n_claims": 2072,
+    "evidence": [
+      {
+        "detector": "peer",
+        "signal": "mod25_rate",
+        "z": 14.8,
+        "value": 0.635,
+        "peer_median": 0.305,
+        "text": "modifier-25 rate (E/M billed with a same-day procedure) is 0.635 vs a specialty median of 0.305 (modified z = 14.8)"
+      },
+      {
+        "detector": "peer",
+        "signal": "paid_per_visit",
+        "z": 5.1,
+        "value": 147.23,
+        "peer_median": 121.142,
+        "text": "paid amount per visit is 147 vs a specialty median of 121 (modified z = 5.1)"
+      },
+      {
+        "detector": "isoforest",
+        "signal": "multivariate",
+        "z": 0.597,
+        "value": null,
+        "peer_median": null,
+        "text": "multivariate billing profile is isolated from peers (Isolation Forest score 0.597, ranked 5 of 240)"
+      }
+    ],
+    "policy_source": [
+      "CMS NCCI Policy Manual for Medicare Services, Ch. I (modifier 25: significant, separately identifiable E/M service)",
+      "Payer fee schedule and add-on procedure policy"
+    ],
+    "required_evidence": [
+      "procedure and E/M notes for 30 same-day E/M + procedure pairs",
+      "add-on procedure documentation for a sample of 30 visits"
+    ],
+    "critic_checks": [
+      {
+        "check": "explainable signal present (not multivariate-only)",
+        "passed": true
+      },
+      {
+        "check": "peer or trailing baseline attached to every signal",
+        "passed": true
+      },
+      {
+        "check": "claim volume >= 200 lines",
+        "passed": true
+      },
+      {
+        "check": "corroborated: 2+ detectors agree or one signal with z >= 8",
+        "passed": true
+      },
+      {
+        "check": "governing policy identified for every signal",
+        "passed": true
+      }
+    ],
+    "disposition": "REVIEW",
+    "disposition_reason": "all critic checks passed",
+    "brief_source": "template",
+    "brief": "Provider P0209 (Dermatology) is flagged by 2 of 3 detectors.\nPrimary pattern: modifier-25 rate (E/M billed with a same-day procedure) is 0.635 vs a specialty median of 0.305 (modified z = 14.8).\nSupporting evidence: paid amount per visit is 147 vs a specialty median of 121 (modified z = 5.1).\nThe multivariate Isolation Forest also isolates this provider's profile.\nGoverning policy: CMS NCCI Policy Manual for Medicare Services, Ch. I (modifier 25: significant, separately identifiable E/M service); Payer fee schedule and add-on procedure policy.\nDisposition: REVIEW (all critic checks passed). Evidence to request: procedure and E/M notes for 30 same-day E/M + procedure pairs; add-on procedure documentation for a sample of 30 visits.\nSuggested next step: Review same-day E/M + procedure pairs for modifier-25 support (a separately identifiable service must be documented). Compare the paid-code mix with peers and review add-on procedure billing.\nThis is a screening signal, not a determination; a human reviewer decides."
+  },
+  {
+    "provider_id": "P0225",
+    "specialty": "Dermatology",
+    "rank": 12,
+    "n_detectors": 2,
+    "n_claims": 982,
+    "evidence": [
+      {
+        "detector": "peer",
+        "signal": "em5_share",
+        "z": 10.9,
+        "value": 0.321,
+        "peer_median": 0.044,
+        "text": "share of level-5 (99215) visits is 0.321 vs a specialty median of 0.0437 (modified z = 10.9)"
+      },
+      {
+        "detector": "peer",
+        "signal": "paid_per_visit",
+        "z": 8.0,
+        "value": 162.09,
+        "peer_median": 121.142,
+        "text": "paid amount per visit is 162 vs a specialty median of 121 (modified z = 8.0)"
+      },
+      {
+        "detector": "peer",
+        "signal": "em_mean_level",
+        "z": 7.4,
+        "value": 4.016,
+        "peer_median": 3.122,
+        "text": "mean E/M level is 4.02 vs a specialty median of 3.12 (modified z = 7.4)"
+      },
+      {
+        "detector": "peer",
+        "signal": "em_high_share",
+        "z": 6.6,
+        "value": 0.75,
+        "peer_median": 0.278,
+        "text": "share of level 4-5 E/M visits is 0.75 vs a specialty median of 0.278 (modified z = 6.6)"
+      },
+      {
+        "detector": "isoforest",
+        "signal": "multivariate",
+        "z": 0.763,
+        "value": null,
+        "peer_median": null,
+        "text": "multivariate billing profile is isolated from peers (Isolation Forest score 0.763, ranked 1 of 240)"
+      }
+    ],
+    "policy_source": [
+      "CMS Medicare Claims Processing Manual, Ch. 12, Sec. 30.6 (E/M services); AMA 2021 E/M guidelines",
+      "Payer fee schedule and add-on procedure policy"
+    ],
+    "required_evidence": [
+      "documentation for a random sample of 30 level-5 visits",
+      "add-on procedure documentation for a sample of 30 visits",
+      "documentation for a random sample of 30 level 4-5 visits"
+    ],
+    "critic_checks": [
+      {
+        "check": "explainable signal present (not multivariate-only)",
+        "passed": true
+      },
+      {
+        "check": "peer or trailing baseline attached to every signal",
+        "passed": true
+      },
+      {
+        "check": "claim volume >= 200 lines",
+        "passed": true
+      },
+      {
+        "check": "corroborated: 2+ detectors agree or one signal with z >= 8",
+        "passed": true
+      },
+      {
+        "check": "governing policy identified for every signal",
+        "passed": true
+      }
+    ],
+    "disposition": "REVIEW",
+    "disposition_reason": "all critic checks passed",
+    "brief_source": "template",
+    "brief": "Provider P0225 (Dermatology) is flagged by 2 of 3 detectors.\nPrimary pattern: share of level-5 (99215) visits is 0.321 vs a specialty median of 0.0437 (modified z = 10.9).\nSupporting evidence: paid amount per visit is 162 vs a specialty median of 121 (modified z = 8.0); mean E/M level is 4.02 vs a specialty median of 3.12 (modified z = 7.4); share of level 4-5 E/M visits is 0.75 vs a specialty median of 0.278 (modified z = 6.6).\nThe multivariate Isolation Forest also isolates this provider's profile.\nGoverning policy: CMS Medicare Claims Processing Manual, Ch. 12, Sec. 30.6 (E/M services); AMA 2021 E/M guidelines; Payer fee schedule and add-on procedure policy.\nDisposition: REVIEW (all critic checks passed). Evidence to request: documentation for a random sample of 30 level-5 visits; add-on procedure documentation for a sample of 30 visits; documentation for a random sample of 30 level 4-5 visits.\nSuggested next step: Request documentation for a random sample of level 4-5 E/M visits and validate medical decision making / time against the 2021 AMA E/M guidelines. Compare the paid-code mix with peers and review add-on procedure billing.\nThis is a screening signal, not a determination; a human reviewer decides."
+  },
+  {
+    "provider_id": "P0042",
+    "specialty": "Family Medicine",
+    "rank": 13,
+    "n_detectors": 2,
+    "n_claims": 1755,
+    "evidence": [
+      {
+        "detector": "peer",
+        "signal": "em5_share",
+        "z": 7.4,
+        "value": 0.357,
+        "peer_median": 0.095,
+        "text": "share of level-5 (99215) visits is 0.357 vs a specialty median of 0.0954 (modified z = 7.4)"
+      },
+      {
+        "detector": "peer",
+        "signal": "em_mean_level",
+        "z": 6.4,
+        "value": 4.129,
+        "peer_median": 3.466,
+        "text": "mean E/M level is 4.13 vs a specialty median of 3.47 (modified z = 6.4)"
+      },
+      {
+        "detector": "peer",
+        "signal": "em_high_share",
+        "z": 5.2,
+        "value": 0.801,
+        "peer_median": 0.452,
+        "text": "share of level 4-5 E/M visits is 0.801 vs a specialty median of 0.452 (modified z = 5.2)"
+      },
+      {
+        "detector": "peer",
+        "signal": "paid_per_visit",
+        "z": 4.8,
+        "value": 144.034,
+        "peer_median": 118.253,
+        "text": "paid amount per visit is 144 vs a specialty median of 118 (modified z = 4.8)"
+      },
+      {
+        "detector": "isoforest",
+        "signal": "multivariate",
+        "z": 0.687,
+        "value": null,
+        "peer_median": null,
+        "text": "multivariate billing profile is isolated from peers (Isolation Forest score 0.687, ranked 2 of 240)"
+      }
+    ],
+    "policy_source": [
+      "CMS Medicare Claims Processing Manual, Ch. 12, Sec. 30.6 (E/M services); AMA 2021 E/M guidelines",
+      "Payer fee schedule and add-on procedure policy"
+    ],
+    "required_evidence": [
+      "documentation for a random sample of 30 level-5 visits",
+      "documentation for a random sample of 30 level 4-5 visits",
+      "add-on procedure documentation for a sample of 30 visits"
+    ],
+    "critic_checks": [
+      {
+        "check": "explainable signal present (not multivariate-only)",
+        "passed": true
+      },
+      {
+        "check": "peer or trailing baseline attached to every signal",
+        "passed": true
+      },
+      {
+        "check": "claim volume >= 200 lines",
+        "passed": true
+      },
+      {
+        "check": "corroborated: 2+ detectors agree or one signal with z >= 8",
+        "passed": true
+      },
+      {
+        "check": "governing policy identified for every signal",
+        "passed": true
+      }
+    ],
+    "disposition": "REVIEW",
+    "disposition_reason": "all critic checks passed",
+    "brief_source": "template",
+    "brief": "Provider P0042 (Family Medicine) is flagged by 2 of 3 detectors.\nPrimary pattern: share of level-5 (99215) visits is 0.357 vs a specialty median of 0.0954 (modified z = 7.4).\nSupporting evidence: mean E/M level is 4.13 vs a specialty median of 3.47 (modified z = 6.4); share of level 4-5 E/M visits is 0.801 vs a specialty median of 0.452 (modified z = 5.2); paid amount per visit is 144 vs a specialty median of 118 (modified z = 4.8).\nThe multivariate Isolation Forest also isolates this provider's profile.\nGoverning policy: CMS Medicare Claims Processing Manual, Ch. 12, Sec. 30.6 (E/M services); AMA 2021 E/M guidelines; Payer fee schedule and add-on procedure policy.\nDisposition: REVIEW (all critic checks passed). Evidence to request: documentation for a random sample of 30 level-5 visits; documentation for a random sample of 30 level 4-5 visits; add-on procedure documentation for a sample of 30 visits.\nSuggested next step: Request documentation for a random sample of level 4-5 E/M visits and validate medical decision making / time against the 2021 AMA E/M guidelines. Compare the paid-code mix with peers and review add-on procedure billing.\nThis is a screening signal, not a determination; a human reviewer decides."
+  },
+  {
+    "provider_id": "P0128",
+    "specialty": "Orthopedics",
+    "rank": 14,
+    "n_detectors": 1,
+    "n_claims": 736,
+    "evidence": [
+      {
+        "detector": "timeseries",
+        "signal": "em_shift",
+        "z": 8.1,
+        "value": 0.814,
+        "peer_median": 0.535,
+        "text": "share of level 4-5 E/M visits rose from 0.53 to 0.81 starting 2025-01 (two-proportion z = 8.1)"
+      }
+    ],
+    "policy_source": [
+      "CMS Medicare Claims Processing Manual, Ch. 12, Sec. 30.6 (E/M services); AMA 2021 E/M guidelines"
+    ],
+    "required_evidence": [
+      "documentation for 30 level 4-5 visits dated after the change point"
+    ],
+    "critic_checks": [
+      {
+        "check": "explainable signal present (not multivariate-only)",
+        "passed": true
+      },
+      {
+        "check": "peer or trailing baseline attached to every signal",
+        "passed": true
+      },
+      {
+        "check": "claim volume >= 200 lines",
+        "passed": true
+      },
+      {
+        "check": "corroborated: 2+ detectors agree or one signal with z >= 8",
+        "passed": true
+      },
+      {
+        "check": "governing policy identified for every signal",
+        "passed": true
+      }
+    ],
+    "disposition": "REVIEW",
+    "disposition_reason": "all critic checks passed",
+    "brief_source": "template",
+    "brief": "Provider P0128 (Orthopedics) is flagged by 1 of 3 detectors.\nPrimary pattern: share of level 4-5 E/M visits rose from 0.53 to 0.81 starting 2025-01 (two-proportion z = 8.1).\nGoverning policy: CMS Medicare Claims Processing Manual, Ch. 12, Sec. 30.6 (E/M services); AMA 2021 E/M guidelines.\nDisposition: REVIEW (all critic checks passed). Evidence to request: documentation for 30 level 4-5 visits dated after the change point.\nSuggested next step: Focus the E/M documentation review on visits after the detected change point.\nThis is a screening signal, not a determination; a human reviewer decides."
+  },
+  {
+    "provider_id": "P0036",
+    "specialty": "Family Medicine",
+    "rank": 15,
+    "n_detectors": 1,
+    "n_claims": 868,
+    "evidence": [
+      {
+        "detector": "peer",
+        "signal": "visits_cv",
+        "z": 3.8,
+        "value": 0.231,
+        "peer_median": 0.142,
+        "text": "month-to-month volume variability is 0.231 vs a specialty median of 0.142 (modified z = 3.8)"
+      }
+    ],
+    "policy_source": [
+      "CMS Program Integrity Manual, Ch. 4 (benefit integrity: services not rendered)"
+    ],
+    "required_evidence": [
+      "scheduling capacity and staffing for the flagged months"
+    ],
+    "critic_checks": [
+      {
+        "check": "explainable signal present (not multivariate-only)",
+        "passed": true
+      },
+      {
+        "check": "peer or trailing baseline attached to every signal",
+        "passed": true
+      },
+      {
+        "check": "claim volume >= 200 lines",
+        "passed": true
+      },
+      {
+        "check": "corroborated: 2+ detectors agree or one signal with z >= 8",
+        "passed": false
+      },
+      {
+        "check": "governing policy identified for every signal",
+        "passed": true
+      }
+    ],
+    "disposition": "WITHHOLD",
+    "disposition_reason": "corroborated: 2+ detectors agree or one signal with z >= 8",
+    "brief_source": "template",
+    "brief": "Provider P0036 (Family Medicine) is flagged by 1 of 3 detectors.\nPrimary pattern: month-to-month volume variability is 0.231 vs a specialty median of 0.142 (modified z = 3.8).\nGoverning policy: CMS Program Integrity Manual, Ch. 4 (benefit integrity: services not rendered).\nDisposition: WITHHOLD (failed check: corroborated: 2+ detectors agree or one signal with z >= 8). No case is opened; re-evaluate with next month's data or after analyst review.\nThis is a screening signal, not a determination; a human reviewer decides."
+  },
+  {
+    "provider_id": "P0194",
+    "specialty": "Dermatology",
+    "rank": 16,
+    "n_detectors": 1,
+    "n_claims": 1599,
+    "evidence": [
+      {
+        "detector": "peer",
+        "signal": "mod25_rate",
+        "z": 3.7,
+        "value": 0.387,
+        "peer_median": 0.305,
+        "text": "modifier-25 rate (E/M billed with a same-day procedure) is 0.387 vs a specialty median of 0.305 (modified z = 3.7)"
+      }
+    ],
+    "policy_source": [
+      "CMS NCCI Policy Manual for Medicare Services, Ch. I (modifier 25: significant, separately identifiable E/M service)"
+    ],
+    "required_evidence": [
+      "procedure and E/M notes for 30 same-day E/M + procedure pairs"
+    ],
+    "critic_checks": [
+      {
+        "check": "explainable signal present (not multivariate-only)",
+        "passed": true
+      },
+      {
+        "check": "peer or trailing baseline attached to every signal",
+        "passed": true
+      },
+      {
+        "check": "claim volume >= 200 lines",
+        "passed": true
+      },
+      {
+        "check": "corroborated: 2+ detectors agree or one signal with z >= 8",
+        "passed": false
+      },
+      {
+        "check": "governing policy identified for every signal",
+        "passed": true
+      }
+    ],
+    "disposition": "WITHHOLD",
+    "disposition_reason": "corroborated: 2+ detectors agree or one signal with z >= 8",
+    "brief_source": "template",
+    "brief": "Provider P0194 (Dermatology) is flagged by 1 of 3 detectors.\nPrimary pattern: modifier-25 rate (E/M billed with a same-day procedure) is 0.387 vs a specialty median of 0.305 (modified z = 3.7).\nGoverning policy: CMS NCCI Policy Manual for Medicare Services, Ch. I (modifier 25: significant, separately identifiable E/M service).\nDisposition: WITHHOLD (failed check: corroborated: 2+ detectors agree or one signal with z >= 8). No case is opened; re-evaluate with next month's data or after analyst review.\nThis is a screening signal, not a determination; a human reviewer decides."
+  },
+  {
+    "provider_id": "P0094",
+    "specialty": "Cardiology",
+    "rank": 17,
+    "n_detectors": 1,
+    "n_claims": 966,
+    "evidence": [
+      {
+        "detector": "isoforest",
+        "signal": "multivariate",
+        "z": 0.504,
+        "value": null,
+        "peer_median": null,
+        "text": "multivariate billing profile is isolated from peers (Isolation Forest score 0.504, ranked 14 of 240)"
+      }
+    ],
+    "policy_source": [
+      "No single governing policy (multivariate profile only)"
+    ],
+    "required_evidence": [
+      "analyst review of the peer-normalised feature profile"
+    ],
+    "critic_checks": [
+      {
+        "check": "explainable signal present (not multivariate-only)",
+        "passed": false
+      },
+      {
+        "check": "peer or trailing baseline attached to every signal",
+        "passed": false
+      },
+      {
+        "check": "claim volume >= 200 lines",
+        "passed": true
+      },
+      {
+        "check": "corroborated: 2+ detectors agree or one signal with z >= 8",
+        "passed": false
+      },
+      {
+        "check": "governing policy identified for every signal",
+        "passed": false
+      }
+    ],
+    "disposition": "WITHHOLD",
+    "disposition_reason": "explainable signal present (not multivariate-only)",
+    "brief_source": "template",
+    "brief": "Provider P0094 (Cardiology) is flagged by 1 of 3 detectors.\nPrimary pattern: multivariate billing profile is isolated from peers (Isolation Forest score 0.504, ranked 14 of 240).\nGoverning policy: No single governing policy (multivariate profile only).\nDisposition: WITHHOLD (failed check: explainable signal present (not multivariate-only)). No case is opened; re-evaluate with next month's data or after analyst review.\nThis is a screening signal, not a determination; a human reviewer decides."
+  },
+  {
+    "provider_id": "P0141",
+    "specialty": "Orthopedics",
+    "rank": 18,
+    "n_detectors": 1,
+    "n_claims": 675,
+    "evidence": [
+      {
+        "detector": "isoforest",
+        "signal": "multivariate",
+        "z": 0.497,
+        "value": null,
+        "peer_median": null,
+        "text": "multivariate billing profile is isolated from peers (Isolation Forest score 0.497, ranked 15 of 240)"
+      }
+    ],
+    "policy_source": [
+      "No single governing policy (multivariate profile only)"
+    ],
+    "required_evidence": [
+      "analyst review of the peer-normalised feature profile"
+    ],
+    "critic_checks": [
+      {
+        "check": "explainable signal present (not multivariate-only)",
+        "passed": false
+      },
+      {
+        "check": "peer or trailing baseline attached to every signal",
+        "passed": false
+      },
+      {
+        "check": "claim volume >= 200 lines",
+        "passed": true
+      },
+      {
+        "check": "corroborated: 2+ detectors agree or one signal with z >= 8",
+        "passed": false
+      },
+      {
+        "check": "governing policy identified for every signal",
+        "passed": false
+      }
+    ],
+    "disposition": "WITHHOLD",
+    "disposition_reason": "explainable signal present (not multivariate-only)",
+    "brief_source": "template",
+    "brief": "Provider P0141 (Orthopedics) is flagged by 1 of 3 detectors.\nPrimary pattern: multivariate billing profile is isolated from peers (Isolation Forest score 0.497, ranked 15 of 240).\nGoverning policy: No single governing policy (multivariate profile only).\nDisposition: WITHHOLD (failed check: explainable signal present (not multivariate-only)). No case is opened; re-evaluate with next month's data or after analyst review.\nThis is a screening signal, not a determination; a human reviewer decides."
+  }
+]

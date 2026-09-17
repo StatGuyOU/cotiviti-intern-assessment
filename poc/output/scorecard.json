@@ -1,0 +1,17 @@
+{
+  "k": 15,
+  "n_true": 15,
+  "tp": 14,
+  "precision_at_k": 0.9333333333333333,
+  "recall_at_k": 0.9333333333333333,
+  "n_two_plus": 13,
+  "precision_two_plus": 1.0,
+  "recall_two_plus": 0.8666666666666667,
+  "recall_by_archetype": {
+    "upcoding": 0.6666666666666666,
+    "upcoding_drift": 1.0,
+    "volume_spike": 1.0,
+    "mod25_overuse": 1.0,
+    "duplicate_billing": 1.0
+  }
+}
